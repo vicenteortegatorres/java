@@ -8,18 +8,36 @@ import java.util.EnumMap;
  */
 public enum Passenger {	
 	ADULT {
+		/*
+		 * Calculates the price for an adult. This is the 100 of the flight price
+		 * 	
+		 * @param flight flight which cost is calculated
+		 * @param departureDate date of departure
+		 */
 		@Override
 		public BigDecimal price(BigDecimal fligthCost, String flightShortCode){
 			return fligthCost;
 		}
 	},
 	CHILD {
+		/*
+		 * Calculates the price for a child. This is the 20% of an adult flight price
+		 * 	
+		 * @param flight flight which cost is calculated
+		 * @param departureDate date of departure
+		 */
 		@Override
 		public BigDecimal price(BigDecimal fligthCost, String flightShortCode){
 			return ADULT.price(fligthCost, flightShortCode).multiply(new BigDecimal(PROPORTION_PRICE_FOR_CHILDREN));
 		}
 	},
 	INFANT {
+		/*
+		 * Calculates the price for Infant. This is the infant price for the flight company
+		 * 	
+		 * @param flight flight which cost is calculated
+		 * @param departureDate date of departure
+		 */
 		@Override
 		public BigDecimal price(BigDecimal fligthCost, String flightShortCode){
 			return Airlines.valueOf(flightShortCode).getInfantPrice();
@@ -37,7 +55,7 @@ public enum Passenger {
 	public abstract BigDecimal price(BigDecimal fligthCost, String flightShortCode);
 	
 	/*
-	 * Creates an enum map with the adults, children and infants for that flight
+	 * Creates an enum map with the number of adults, children and infants for that flight
 	 * 	
 	 * @param adults number of adult passengers
      * @param children number of child passengers
