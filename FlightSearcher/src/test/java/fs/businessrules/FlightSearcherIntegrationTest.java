@@ -21,6 +21,9 @@ import fs.model.Journey;
 import fs.model.Passenger;
 import fs.util.Days;
 
+/*
+ * Integration test where FlightSearcher and DefaultFlightCostCalculatorTest are tested together
+ */
 public class FlightSearcherIntegrationTest {	
 	/*
 	 * File name that contains flight test values for testing

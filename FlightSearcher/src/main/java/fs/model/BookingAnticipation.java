@@ -3,7 +3,13 @@ package fs.model;
 import java.math.BigDecimal;
 
 /*
- * Enum with Booking anticipation ranges and the proportion of the price applied in each range
+ * Enum with Booking anticipation ranges and the proportion of the price applied in each range according with the pricing rules
+ * 
+ * If days prior to the departure date:
+ * - more than 30 then 80% % of the base price 
+ * - 30 to 16 then 100% % of the base price 
+ * - 15 to 3 then 120% % of the base price 
+ * - less that 3 then 150% % of the base price 
  */
 public enum BookingAnticipation {
 	EARLY(31, Integer.MAX_VALUE, 0.8), 

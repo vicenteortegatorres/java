@@ -23,7 +23,7 @@ public class FlightsCreatorTest {
 	}
 	
 	@Test
-	public void listShouldBeEmptyIfReturnThreeFligths() throws Exception {
+	public void listShoulReturnCorrectValuesIfBufferHasFligths() throws Exception {
 		InputStream is = new ByteArrayInputStream("CPH,FRA,IB2818,186".getBytes());
 		List<Flight> flights = new FlightsCreator().create(is);
 		

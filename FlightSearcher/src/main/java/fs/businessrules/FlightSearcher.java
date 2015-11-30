@@ -15,7 +15,7 @@ import fs.model.Passenger;
 
 public class FlightSearcher {
 	/*
-	 * Flights store in a map with Journey as key
+	 * Flights store in a map with Journey as key. Each Journey has a list of its lists
 	 */
 	private final Map<Journey,List<Flight>> flightsPerJourney;	
 	
