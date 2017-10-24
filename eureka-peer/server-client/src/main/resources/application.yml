@@ -1,0 +1,11 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: server-client
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password@peer1:8761/eureka/, http://user:password@peer2:8761/eureka/
